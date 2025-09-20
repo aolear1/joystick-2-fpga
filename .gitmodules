@@ -1,6 +1,0 @@
-[submodule "fpga"]
-	path = fpga
-	url = /home/aiden/Documents/programmin/projects/WirelessController/
-[submodule "stm32"]
-	path = stm32
-	url = /home/aiden/Documents/programmin/STM32Cube/controller/
