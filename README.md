@@ -19,7 +19,7 @@ The project uses the STM32 HAL as well as [Intel's University Program UART IP](h
 
 [Here](https://youtu.be/DvpHV2o8FcU) is a video of a little demo. I hope to get this up and running with my space invaders game soon! 
 
-[UPDATE](https://youtube.com/shorts/nQX0-zW6wnY): Latency issues were improved by doubling baud rate and switching to DMA uart transmits. Adding an RC filter on the button also removed most of the missed clicks.
+[UPDATE](https://youtube.com/shorts/nQX0-zW6wnY): Latency issues were improved by doubling baud rate and switching to DMA transmission. Adding an RC filter on the button also removed most of the missed clicks.
 
 ---
 ## Little Facts
@@ -27,6 +27,7 @@ The project uses the STM32 HAL as well as [Intel's University Program UART IP](h
 - In `fpga` there is a .tcl script to import an avalon MM wrapper to read/process data from the UART fifo, and display it so any avalon MM master can access it. 
 - APC220 Tranceiver parameters can be edited using [RF Magic Software](https://wiki.dfrobot.com/apc220_radio_data_module_sku_tel0005_), be sure to connect GND, TX, and RX *before* VCC for it to connect
 - The UART IP's read interrupt is generated when there are >96 bytes in the FIFO, it also takes 3 cycles to clear. Best to base successive reads off polling the `RVALID` bit, but after you sucessfully read, it takes *an extra cycle* to go low after reading, so be sure to account for that otherwise the double read could overwrite your data with a 0.
+
 
 
 
